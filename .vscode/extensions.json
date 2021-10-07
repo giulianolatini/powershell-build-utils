@@ -1,5 +1,4 @@
 {"recommendations": [
-    "tylerleonhardt.vscode-pester-test-adapter",
     "pspester.pester-test",
     "ms-vscode.powershell",
     "tobysmith568.run-in-powershell",
@@ -10,7 +9,6 @@
     "github.vscode-pull-request-github",    
     "ms-vscode-remote.remote-ssh-edit",
     "ms-vscode-remote.vscode-remote-extensionpack",
-    "hbenl.vscode-test-explorer",
     "redhat.vscode-yaml",
     "dotjoshjohnson.xml",
     "clemenspeters.format-json",
