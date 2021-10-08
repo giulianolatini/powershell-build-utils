@@ -34,22 +34,19 @@ function Get-ServiceInfo {
     [CmdletBinding()]
     param (
         [Parameter()]
-            [string] $ServiceName
+            [string] $ProcessName
     ) 
     $ErrorActionPreference = 'SilentlyContinue'
-    $ServiceState = Get-Service -Name $ServiceName
-    switch ([string]$ServiceState.Status) {
-        'Running' {
-            return 'Running'
-        }
-        'Stopped' {
-            return 'Stopped'
-        }
-        Default {
+    $ProcessState = Get-Process -Name $ProcessName
+    If ([string]$ProcessState.Responding) {
+        return 'Running'
+    } else {
+        $ServiceState = Get-Service -Name $ProcessName
+        if ($null -ne $ServiceState.Status) {
+            return [string]$ServiceState.Status
+        } else {
             return 'NotInstalled'
         }
-
     }
-    # return 'NotInstalled'
 }    
 
