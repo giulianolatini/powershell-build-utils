@@ -36,17 +36,29 @@ function Get-ServiceInfo {
         [Parameter()]
             [string] $ProcessName
     ) 
-    $ErrorActionPreference = 'SilentlyContinue'
-    $ProcessState = Get-Process -Name $ProcessName
-    If ([string]$ProcessState.Responding) {
-        return 'Running'
-    } else {
-        $ServiceState = Get-Service -Name $ProcessName
-        if ($null -ne $ServiceState.Status) {
-            return [string]$ServiceState.Status
-        } else {
-            return 'NotInstalled'
-        }
-    }
-}    
+    
+    [string]$Info = $null
 
+    $ErrorActionPreference = 'SilentlyContinue'
+    if ([Environment]::OSVersion.Platform -eq 2 ) {
+        $ProcessState = Get-Process -Name $ProcessName
+        If ([string]$ProcessState.Responding) {
+            $Info = 'Running'
+        } else {
+            $ServiceState + $null
+            $ServiceState = Get-Service -Name $ProcessName
+            if ($null -ne $ServiceState) {
+                if ($null -ne $ServiceState.Status) {
+                    $Info = $ServiceState.Status
+                } else {
+                    $Info = 'NotInstalled'
+                }
+            } else {
+                $Info = 'NotInstalled'
+            }
+        } 
+    } else {
+    
+    }
+    return [string]$Info
+}

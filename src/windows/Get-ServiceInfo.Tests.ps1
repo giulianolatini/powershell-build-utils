@@ -6,22 +6,22 @@ BeforeAll {
 Describe "Get-ServiceInfo Test" {
     Context "when a service is running" {
         It "pwsh should be running" {
-            Get-ServiceInfo -ProcessName 'pwsh' | Should -Be 'Running'
+            Get-ServiceInfo('pwsh') | Should -Be 'Running'
         }
 
         It "pwsh should not be stop" {
-            Get-ServiceInfo -ProcessName 'pwsh' | Should  -Not -Be 'Stopped'
+            Get-ServiceInfo('pwsh') | Should  -Not -Be 'Stopped'
         }
     }
 }
 Describe "Get-ServiceInfo Negation Test" {
     Context "when a service is running" {
         It "gupdate should not be running" {
-            Get-ServiceInfo -ProcessName 'gupdate'| Should -Not -Be 'Running'
+            Get-ServiceInfo('gupdate') | Should -Not -Be 'Running'
         }
 
         It "gupdate should be stop" {
-            Get-ServiceInfo -ProcessName 'gupdate' | Should -Be 'Stopped'
+            Get-ServiceInfo('gupdate') | Should -Be 'Stopped'
         }
     }
 }
@@ -35,7 +35,7 @@ Describe "Get-ServiceInfo JarvisServices Test" {
             @{ Name = 'dcpm-notify'; Expected = 'Stopped' }
             @{ Name = 'DellOptimizer'; Expected = 'Running' }
         ) {
-            Get-ServiceInfo -ProcessName $Name | Should -Be $Expected
+            Get-ServiceInfo($Name) | Should -Be $Expected
         }
     }
 }
