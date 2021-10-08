@@ -1,4 +1,5 @@
 {"recommendations": [
+    "tylerleonhardt.vscode-pester-test-adapter",
     "pspester.pester-test",
     "ms-vscode.powershell",
     "tobysmith568.run-in-powershell",
