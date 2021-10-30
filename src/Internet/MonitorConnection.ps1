@@ -1,3 +1,5 @@
+# the script was taken from: [Monitor your Connection to Internet – PowerShell](https://powershellposse.com/2017/12/28/monitor-your-connection-to-internet-powershell/)
+
 function Start-ConnectionMonitoring
 {
     param($isp, $gateway, $Logfile, [int]$Delay = 10, [string]$adapter, [switch]$ispPopup, [switch]$gateWayPopup)
