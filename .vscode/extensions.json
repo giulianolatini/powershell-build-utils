@@ -1,5 +1,6 @@
 {"recommendations": [
     "tylerleonhardt.vscode-pester-test-adapter",
+    "ironmansoftware.powershellprotools",
     "pspester.pester-test",
     "ms-vscode.powershell",
     "tobysmith568.run-in-powershell",
@@ -21,6 +22,8 @@
     "richie5um2.vscode-sort-json", 
     "anseki.vscode-color",
     "usernamehw.errorlens",
+    "ms-azuretools.vscode-docker",
+    "github.copilot",
     "coenraads.bracket-pair-colorizer-2",
     "vscode-icons-team.vscode-icons",
     "oderwat.indent-rainbow",
@@ -29,5 +32,6 @@
     "mervin.markdown-formatter",
     "fcrespo82.markdown-table-formatter",
     "shuworks.vscode-table-formatter",
-    "vsls-contrib.codetour"
+    "vsls-contrib.codetour",
+    "paperfanz.ibm-color-palette-color-scheme"
 ]}

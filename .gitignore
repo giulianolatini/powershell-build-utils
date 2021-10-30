@@ -1,5 +1,6 @@
 ﻿.vscode/*
 !.vscode/settings.json
+!.vscode/User/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
